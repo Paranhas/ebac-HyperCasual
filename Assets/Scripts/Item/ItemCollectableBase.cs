@@ -10,7 +10,7 @@ public class ItemCollectableBase : MonoBehaviour
 
     public string compareTag = "Player";
     public ParticleSystem particleSystem;
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.CompareTag(compareTag))
         {
