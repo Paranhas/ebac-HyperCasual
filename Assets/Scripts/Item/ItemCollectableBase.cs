@@ -5,11 +5,20 @@ using UnityEngine;
 
 public class ItemCollectableBase : MonoBehaviour
 {
+    public string compareTag = "Player";
+    public ParticleSystem particleSystem;
+    public float timeToHide = 3;
+    public GameObject graphicItem;
+
     [Header("Sounds")]
     public AudioSource audioSource;
 
-    public string compareTag = "Player";
-    public ParticleSystem particleSystem;
+    private void Awake()
+    {
+        //if (particleSystem == null) particleSystem.transform.SetParent(null);
+    }
+
+
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.CompareTag(compareTag))
@@ -17,16 +26,18 @@ public class ItemCollectableBase : MonoBehaviour
             Collect();
         }
     }
-    private void Awake()
-    {
-        if(particleSystem == null)particleSystem.transform.SetParent(null);
-    }
+ 
 
     protected virtual void Collect()
     {
-        Debug.Log("Collect");
-        gameObject.SetActive(false);
+        if(graphicItem != null) graphicItem.SetActive(false);
+        Invoke("HideObject", timeToHide);
         OnCollect();
+    }
+
+    private void HideObject()
+    {
+        gameObject.SetActive(false);
     }
 
     protected virtual void OnCollect()
