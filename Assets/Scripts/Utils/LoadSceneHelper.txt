@@ -1,9 +1,0 @@
-using Unity.Engine.SceneMaagement;
-
-public void Load(int i){
-SceneManager.LoadScene(i);
-}
-
-public void Load(string s){
-SceneManager.LoadScene(s);
-}

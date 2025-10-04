@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == tagToCheckEndLine)
         {
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     public void EndGame()
     {
         _canRun = false;
-        enfScreen.SetActive(true);
+        endScreen.SetActive(true);
     }
 
 
