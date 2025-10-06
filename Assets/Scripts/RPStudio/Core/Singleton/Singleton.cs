@@ -12,11 +12,13 @@ namespace RPStudio.Core.Singleton
         {
             if (Instance == null)
             {
-                Instance = GetComponent<T>();
+                Instance = this as T;
             }
-            else
+            else if (Instance == this)
             {
-                Destroy(gameObject);
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
