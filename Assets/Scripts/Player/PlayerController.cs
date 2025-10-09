@@ -3,12 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 //using static UnityEditor.PlayerSettings;
 using RPStudio.Core.Singleton;
+using TMPro;
+using DG.Tweening;
 
 public class PlayerController : Singleton<PlayerController>
 {
     [Header("Lerp")]
     public Transform target;
     public float lerpSpeed = 1f;
+
+    [Header("TextMeshPro")]
+    public TextMeshPro uiTextPowerUp;
+
+    [Header("Coin Setup")]
+    public GameObject coinCollector;
 
     public float speed = 1f;
 
@@ -73,7 +81,7 @@ public class PlayerController : Singleton<PlayerController>
     #region POWER UPS
     public void SetPowerUpText(string s)
     {
-       // uiTextPowerUp.text = s;
+       uiTextPowerUp.text = s;
     }
     public void PowerUpSpeedUp(float f)
     {
@@ -88,6 +96,34 @@ public class PlayerController : Singleton<PlayerController>
     {
         invencible = b;
     }
+
+    public void ChangeHeight(float amount, float duration, float animationDuration, Ease ease)
+    {
+        var p = transform.position;
+        p.y = _startPosition.y + amount;
+        transform.position = p;
+
+        /*transform.DOMoveY(_startPosition.y + amount, animationDuration).SetEase(ease);
+        Invoke(nameof(ResetHeight), duration);*/
+    }
+
+    public void ResetHeight()
+    {
+        var p = transform.position;
+        p.y = _startPosition.y;
+        transform.position = p;
+
+       // transform.DOMoveY(_startPosition.y, .1);
+    }
+
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
+    }
+
+
+
+
     #endregion
 
 }
