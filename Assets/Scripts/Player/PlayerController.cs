@@ -120,10 +120,6 @@ public class PlayerController : Singleton<PlayerController>
     {
         coinCollector.transform.localScale = Vector3.one * amount;
     }
-
-
-
-
-    #endregion
+     #endregion
 
 }

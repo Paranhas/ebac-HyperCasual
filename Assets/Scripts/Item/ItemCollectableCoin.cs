@@ -22,7 +22,7 @@ public class ItemCollectableCoin : ItemCollectableBase
     }
 
     protected override void Collect()
-    {
+    { 
         OnCollect();
     }
     private void Update()
