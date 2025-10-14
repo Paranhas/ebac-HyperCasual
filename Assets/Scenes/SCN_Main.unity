@@ -674,6 +674,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Astronaut Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7970377835695618558, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetup.Array.data[1].speed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7970377835695618558, guid: 89e20167823a30d459856414377997d1, type: 3}
+      propertyPath: animatorSetup.Array.data[2].speed
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -990,7 +998,7 @@ MonoBehaviour:
   uiTextPowerUp: {fileID: 869878315}
   coinCollector: {fileID: 2053496465}
   animatorManager: {fileID: 1831319566}
-  speed: 5
+  speed: 7
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
   invencible: 0
