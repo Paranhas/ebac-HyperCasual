@@ -989,6 +989,7 @@ MonoBehaviour:
   lerpSpeed: 9
   uiTextPowerUp: {fileID: 869878315}
   coinCollector: {fileID: 2053496465}
+  animatorManager: {fileID: 1831319566}
   speed: 5
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
@@ -1994,6 +1995,7 @@ MonoBehaviour:
   lerpSpeed: 9
   uiTextPowerUp: {fileID: 0}
   coinCollector: {fileID: 0}
+  animatorManager: {fileID: 0}
   speed: 5
   tagToCheckEnemy: Enemy
   tagToCheckEndLine: EndLine
@@ -3181,6 +3183,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae9c7105ad070b54faafc3f994837958, type: 3}
+--- !u!114 &1831319566 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7970377835695618558, guid: 89e20167823a30d459856414377997d1, type: 3}
+  m_PrefabInstance: {fileID: 361042780}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c008fcc56bd9d5c45b047321afea5988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1844713546
 GameObject:
   m_ObjectHideFlags: 0
