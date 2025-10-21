@@ -1905,6 +1905,17 @@ MonoBehaviour:
   - {fileID: 3069311746890622338, guid: 8dfa366bca228d74b92b363874333183, type: 3}
   - {fileID: 3069311746890622338, guid: 3fbb33702dd49174f8633ca88b8c2670, type: 3}
   _index: 0
+  levelStartPieces:
+  - {fileID: 4470835126241016329, guid: 0fa957927bd3d3b40b24dd5f2152d8b2, type: 3}
+  levelPieces:
+  - {fileID: 4470835126241016329, guid: 1e8e3044fd93d284d9ed9c57be82b466, type: 3}
+  - {fileID: 6569144373095306901, guid: 1c90f1efa282abe49a716578363523c5, type: 3}
+  - {fileID: 4470835126241016329, guid: 714b3700b542e4d4cba06f7ec5720241, type: 3}
+  levelEndPieces:
+  - {fileID: 4470835126241016329, guid: 837b766b72e6e2a45a1104e514591a72, type: 3}
+  pieceStartNumber: 3
+  pieceNumber: 25
+  pieceEndNumber: 1
 --- !u!4 &1854368556
 Transform:
   m_ObjectHideFlags: 0
@@ -2295,6 +2306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piece02
       objectReference: {fileID: 0}
+    - target: {fileID: 7583235766425845705, guid: 1c90f1efa282abe49a716578363523c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2412,6 +2427,10 @@ PrefabInstance:
     - target: {fileID: 8421468568446102951, guid: 1e8e3044fd93d284d9ed9c57be82b466, type: 3}
       propertyPath: m_Name
       value: Piece01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8421468568446102951, guid: 1e8e3044fd93d284d9ed9c57be82b466, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

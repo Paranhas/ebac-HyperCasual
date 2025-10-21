@@ -9,9 +9,21 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int _index;
     private GameObject _currentLevel;
 
+    [Header("Pieces")]
+    public List<LevelPieceBase> levelStartPieces;
+    public List<LevelPieceBase> levelPieces;
+    public List<LevelPieceBase> levelEndPieces;
+
+    public int pieceStartNumber = 3;
+    public int pieceNumber = 5;
+    public int pieceEndNumber = 1;
+
+    private List<LevelPieceBase> _spawnedPieces;
+
     public void Awake()
     {
-        SpawnNextLevel();
+       // SpawnNextLevel();
+       CreateLevelPieces();
 
     }
     private void SpawnNextLevel()
@@ -40,5 +52,39 @@ public class LevelManager : MonoBehaviour
             SpawnNextLevel();
         }
     }
+
+    #region
+    private void CreateLevelPieces()
+    {
+        _spawnedPieces = new List<LevelPieceBase>();
+
+        for (int i = 0; i < pieceStartNumber; i++)
+        {
+            CreateLevelPiece(levelStartPieces);
+        }
+        for (int i = 0; i < pieceNumber; i++)
+        {
+            CreateLevelPiece(levelPieces);
+        }
+        for (int i = 0; i < pieceEndNumber; i++)
+        {
+            CreateLevelPiece(levelEndPieces);
+        }
+    }
+
+    private void CreateLevelPiece(List<LevelPieceBase> list)
+    {
+        var piece = list[Random.Range(0, list.Count)];
+        var spawnedPiece = Instantiate(piece, container);
+
+        if (_spawnedPieces.Count > 0) 
+        {
+            var lastPiece = _spawnedPieces[_spawnedPieces.Count - 1];
+
+            spawnedPiece.transform.position = lastPiece.endPiece.position;
+        }
+        _spawnedPieces.Add(spawnedPiece);
+    }
+    #endregion
 }
 
