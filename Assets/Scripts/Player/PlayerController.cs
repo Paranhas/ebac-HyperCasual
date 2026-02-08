@@ -21,6 +21,8 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [SerializeField] private BounceHelper _bounceHelper;
+
     public float speed = 1f;
 
     public string tagToCheckEnemy = "Enemy";
@@ -39,6 +41,15 @@ public class PlayerController : Singleton<PlayerController>
     {
         _startPosition = transform.position;
         ResetSpeed();
+    }
+
+    public void Bounce() 
+    {
+        if (_bounceHelper != null)
+        {
+            _bounceHelper.Bounce();
+        }
+        
     }
 
 
