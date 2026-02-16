@@ -3621,20 +3621,13 @@ ParticleSystem:
   CollisionModule:
     enabled: 1
     serializedVersion: 4
-    type: 0
+    type: 1
     collisionMode: 0
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
     multiplyColliderForceByCollisionAngle: 1
-    m_Planes:
-    - {fileID: 5057421335767140539, guid: 6a36cff6a8649e54b8f66a98c66c0962, type: 3}
-    - {fileID: 8107849356987506001, guid: 837b766b72e6e2a45a1104e514591a72, type: 3}
-    - {fileID: 8107849356987506001, guid: 0fa957927bd3d3b40b24dd5f2152d8b2, type: 3}
-    - {fileID: 8107849356987506001, guid: 1e8e3044fd93d284d9ed9c57be82b466, type: 3}
-    - {fileID: 1773778338242696070, guid: 1c90f1efa282abe49a716578363523c5, type: 3}
-    - {fileID: 8107849356987506001, guid: 714b3700b542e4d4cba06f7ec5720241, type: 3}
-    - {fileID: 8107849356987506001, guid: de5fc09739d062349b510356890c4985, type: 3}
+    m_Planes: []
     m_Dampen:
       serializedVersion: 2
       minMaxState: 0
