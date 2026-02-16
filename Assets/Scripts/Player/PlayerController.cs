@@ -21,6 +21,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [Header("Animation")]
+    public ParticleSystem vfxDeath;
+
     [SerializeField] private BounceHelper _bounceHelper;
 
     public float speed = 1f;
@@ -66,9 +69,13 @@ public class PlayerController : Singleton<PlayerController>
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == tagToCheckEnemy)
+        if (collision.transform.tag == tagToCheckEnemy)
         {
-            if(!invencible) EndGame(AnimatorManager.AnimationType.DEAD);
+            if (!invencible) 
+            {
+                MoveBack(collision.transform);
+                EndGame(AnimatorManager.AnimationType.DEAD);
+            }
         }
     }
 
@@ -90,6 +97,7 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animationType);
+        if (vfxDeath != null) vfxDeath.Play();
     }
 
 
